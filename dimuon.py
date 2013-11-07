@@ -22,9 +22,12 @@ def dimuon_mass_histo(tree):
 def find_pairs(particles):
     pairs = []
     num_particles = len(particles)
-    for first in xrange(num_particles):
-        for second in xrange(first+1, num_particles):
-            pairs.append((first, second))
+    for i_first in xrange(num_particles):
+        for i_second in xrange(i_first+1, num_particles):
+            first = particles[i_first]
+            second = particles[i_second]
+            if first.qpt * second.qpt < 0:
+                pairs.append((first, second))
     return pairs
 
 if __name__ == '__main__':
