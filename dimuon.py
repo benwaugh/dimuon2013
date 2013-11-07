@@ -1,4 +1,8 @@
-# Read events and create histogram of dimuon masses
+'''
+Read events and create histogram of dimuon masses
+
+So far just prints numbers of particles to screen.
+'''
 
 from ROOT import TFile
 
