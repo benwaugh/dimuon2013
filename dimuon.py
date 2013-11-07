@@ -2,3 +2,4 @@
 
 from ROOT import TFile
 
+file_data = TFile("/home/waugh/data/events.root")
