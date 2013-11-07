@@ -7,6 +7,9 @@ So far just prints numbers of particles to screen.
 from ROOT import TFile
 
 def tree_from_file(filename):
+    '''
+    Return tree "events" from given file.
+    '''
     global file_data
     file_data = TFile(filename)
     tree_data = file_data.Get("events")
