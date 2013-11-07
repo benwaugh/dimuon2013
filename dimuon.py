@@ -19,6 +19,14 @@ def dimuon_mass_histo(tree):
     hist = TH1F()
     return hist
 
+def find_pairs(particles):
+    pairs = []
+    num_particles = len(particles)
+    for first in xrange(num_particles):
+        for second in xrange(first+1, num_particles):
+            pairs.append((first, second))
+    return pairs
+
 if __name__ == '__main__':
     tree_data = tree_from_file("/home/waugh/data/events.root")   
     n_events = tree_data.GetEntries()
